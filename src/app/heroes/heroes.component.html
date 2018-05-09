@@ -1,0 +1,40 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div >
+	<br>
+	<h2>
+		<font color="#FF9933">
+			My Heroes
+		</font>
+	</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+		</a>
+		
+    <button class="delete" title="delete hero" class="fa fa-trash" style="float: right;"
+    (click)="delete(hero)"></button>
+  </li>
+</ul>
+	
+	<div>
+		<label> 
+			<h4>
+				<font color="#FF0066">Hero name:
+			<input #heroName />
+				</font>
+			</h4>
+		</label>
+		<!-- (click) passes input value to add() and then clears the input -->
+		<button (click)="add(heroName.value); heroName.value=''" class="material-icons" style="font-size:20px">add
+		</button>
+		<br><br>
+	</div>
+</div>
+	
+
+

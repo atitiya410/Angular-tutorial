@@ -1,0 +1,36 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div *ngIf="hero" style="text-align:center">
+  <br>
+  <h2>
+    <font color="#FF3399">
+    {{ hero.name | uppercase }} Details
+   </font>
+  </h2>
+  <div >
+    <h2>
+      <font color="#FF0066">ID : {{hero.id}}</font>
+    </h2>
+  </div>
+  <br>
+
+  <div>
+  <label>
+    <h4>
+      <font color="#FF0066">Name : 
+        <input [(ngModel)]="hero.name" placeholder="name">
+      </font>
+    </h4>
+  </label>
+
+  </div>
+    <button (click)="goBack()" class="glyphicon glyphicon-circle-arrow-left" style="font-size:45px"></button>
+    
+    <button (click)="save()" class="material-icons" style="font-size:47px">save</button>
+  </div>
+  
